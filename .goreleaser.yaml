@@ -21,20 +21,9 @@ builds:
       - -X main.goVersion={{ .Env.GOVERSION }}
     goos:
       - linux
-      - windows
-      - darwin
-      - freebsd
     goarch:
       - amd64
-      - arm64
-      - riscv64
-      - s390x
-      - mips64
-      - arm
     main: ./cmd/picoclaw
-    ignore:
-      - goos: windows
-        goarch: arm
 
 dockers_v2:
   - id: picoclaw
@@ -49,8 +38,6 @@ dockers_v2:
       - "latest"
     platforms:
       - linux/amd64
-      - linux/arm64
-      - linux/riscv64
 
 archives:
   - formats: [tar.gz]
